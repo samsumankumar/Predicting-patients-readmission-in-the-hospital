@@ -10,7 +10,8 @@ named as MIMIC III data.
 
 Readmission of a patient in the Hospital within next 30 days
 
-Abstract
+Abstract:
+
 The database used in this is MIMIC III (Medical Information Mart for Intensive Care), which is freely available, comprised of health-related data of around 40000 patients stayed under critical care from 2001 to 2012. “The database has information like demographics, vital sign measurements made at the bedside (~1 data point per hour), laboratory test results, procedures, medications, caregiver notes, imaging reports, and mortality (both in and out of hospital).” [1]
 Only 3 tables from the MIMIC III database has been used such as ADMISSIONS, NOTEEVENTS and DIAGNOSES_ICD. Preprocessing the tables included creation of a response variable for the problem statement from the existing predictors. For that I used ADMISSIONS table. Then from DIAGNOSES_ICD table taken the ICD codes and assigned them to their respective categories and merged with the ADMISSIONS table. Then from NOTEEVENTS preprocessed the text data of each patient by counting the number of words from each patient and merged them with to create the final dataset for my modelling.
 To check my model’s accuracy ran the base models with default parameters. At this point of time used Logistic Regression, Random Forest and Neural Network. Then tuned the hyperparameters for both the models to compare the prediction results from the previous results. Even checked the calibration curves of both the models which were not satisfactory. So calibrated the models and plotted the calibration curves. Turned out Random forest is the best predictor of both.
